@@ -19,3 +19,13 @@ The system shall generate a basic internal invoice or receipt for each confirmed
 - Given a membership payment has been confirmed
 - When basic invoice generation runs
 - Then an invoice number, date, amount, currency, method and student reference shall be available
+
+### Requirement: Cashiers must not alter payment history
+
+Cashiers shall create payments and invoices but shall not delete historical payments or annul invoices without authorization.
+
+#### Scenario: Cashier attempts to delete payment
+
+- Given a payment already exists
+- When a `cashier` attempts to delete it
+- Then the system shall require `admin` or `superadmin` authorization

@@ -19,3 +19,13 @@ The system shall record whether a movement belongs to petty cash or the main acc
 - Given petty cash has balance
 - When an expense is paid from petty cash
 - Then the movement shall be linked to petty cash instead of the main account
+
+### Requirement: Cashiers must have limited finance permissions
+
+Cashiers shall register allowed movements but shall not manage fund configuration or view complete sensitive financial metrics.
+
+#### Scenario: Cashier attempts to change fund settings
+
+- Given funds are configured
+- When a `cashier` attempts to change fund settings
+- Then the system shall require `admin` or `superadmin` authorization

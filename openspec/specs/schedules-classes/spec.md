@@ -1,7 +1,7 @@
 ---
 spec_id: schedules-classes
 status: draft
-version: 0.1
+version: 0.2
 source: raw/sources/2026-06-24-fit-studio-brief.md
 ---
 
@@ -20,7 +20,7 @@ El sistema debe incluir Spinning, Zumba, Acondicionamiento fisico, Ritmo Latino,
 #### Scenario: A class schedule is created
 
 - Given a class type exists in the catalog
-- When an administrator creates a scheduled session
+- When an `admin` or `superadmin` creates a scheduled session
 - Then the session shall reference the class type and its expected duration
 
 ### Requirement: The system shall respect operating hours
@@ -36,7 +36,7 @@ Los horarios disponibles deben respetar lunes a viernes 6 am a 9 am y 3 pm a 9 p
 #### Scenario: A class is scheduled outside opening hours
 
 - Given the day and hour are outside the configured operating blocks
-- When an administrator attempts to schedule the class
+- When an `admin` or `superadmin` attempts to schedule the class
 - Then the system shall flag the schedule as invalid or require explicit override
 
 ### Requirement: The system shall enforce known session durations
@@ -48,6 +48,16 @@ Clases regulares duran una hora; Ballet y Urbano duran una hora y media.
 - Given the class type is Ballet
 - When the session is created
 - Then the default duration shall be 1.5 hours
+
+### Requirement: The system shall separate schedule management from attendance capture
+
+Admin y superadmin gestionan horarios/clases; cashier registra asistencia operativa.
+
+#### Scenario: A cashier records class attendance
+
+- Given a class session already exists
+- When a user with role `cashier` records student attendance
+- Then the system shall allow attendance capture without allowing schedule configuration changes
 
 ## Open Questions
 

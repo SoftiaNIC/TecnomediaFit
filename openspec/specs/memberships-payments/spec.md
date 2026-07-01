@@ -1,7 +1,7 @@
 ---
 spec_id: memberships-payments
 status: draft
-version: 0.2
+version: 0.3
 source: raw/sources/2026-06-24-fit-studio-brief.md
 ---
 
@@ -17,10 +17,10 @@ Gestionar planes, pagos, facturacion basica interna, metodos de pago y manejo de
 
 El sistema debe registrar los planes conocidos: mensualidad, pago por clase, plan semanal y plan quincenal.
 
-#### Scenario: A receptionist records a monthly payment
+#### Scenario: A cashier records a monthly payment
 
 - Given an active student chooses the monthly plan
-- When the receptionist records a payment of 1100 C$
+- When the cashier records a payment of 1100 C$
 - Then the system shall create a payment record and associate it with the student's membership period
 
 #### Scenario: A student pays for one class
@@ -36,7 +36,7 @@ Cada pago debe indicar metodo de pago.
 #### Scenario: A transfer payment is recorded
 
 - Given a student pays by transfer
-- When the receptionist registers the payment
+- When the cashier registers the payment
 - Then the system shall store the method as transfer and allow a reference number when available
 
 ### Requirement: The system shall generate basic internal invoices
@@ -58,6 +58,16 @@ Los importes deben guardar moneda y evitar conversiones implicitas no configurad
 - Given the weekly plan price is listed as 10 USD
 - When a receptionist records the payment
 - Then the system shall store the amount and currency explicitly
+
+### Requirement: The system shall restrict payment history changes by role
+
+Los cajeros pueden registrar pagos y emitir facturas/recibos, pero no pueden borrar historicos ni anular facturas sin autorizacion.
+
+#### Scenario: A cashier attempts to delete a payment
+
+- Given a payment already exists
+- When a user with role `cashier` attempts to delete it
+- Then the system shall reject the action or require `admin` or `superadmin` authorization
 
 ## Open Questions
 

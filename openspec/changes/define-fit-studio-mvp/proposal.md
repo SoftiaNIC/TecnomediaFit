@@ -10,6 +10,7 @@ Fit Studio necesita convertir un brief inicial en alcance cotizable y arquitectu
 - Separar capacidades en specs independientes.
 - Registrar reglas de negocio conocidas y preguntas abiertas.
 - Preparar base para cotizacion y paper de arquitectura.
+- Definir `core-supabase-foundation` como spec inicial para arrancar backend/API con NestJS, Supabase CLI, RBAC, tipado fuerte y modulos feature-first.
 - Mantener fuera de alcance el codigo productivo hasta aprobar la definicion.
 
 ## Impact
@@ -21,7 +22,7 @@ Fit Studio necesita convertir un brief inicial en alcance cotizable y arquitectu
 ## Out Of Scope
 
 - Implementacion de frontend, backend, base de datos o despliegue.
-- Integraciones reales con pasarelas de pago, SMS o correo.
+- Conexion real con proveedores externos antes de seleccionar proveedor y aprobar costos operativos.
 - Facturacion fiscal avanzada.
 - Asistentes conversacionales.
 - Ecommerce o venta general de productos.

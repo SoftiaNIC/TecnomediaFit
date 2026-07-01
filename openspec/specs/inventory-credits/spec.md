@@ -1,7 +1,7 @@
 ---
 spec_id: inventory-credits
 status: draft
-version: 0.2
+version: 0.3
 source: raw/sources/2026-06-24-fit-studio-brief.md
 ---
 
@@ -21,7 +21,7 @@ El inventario inicial solo debe contemplar liquidos.
 
 - Given the system is configured for liquid inventory only
 - When a user tries to add a non-liquid product
-- Then the system shall reject it or require an administrator to change the inventory scope
+- Then the system shall reject it or require `admin` or `superadmin` to change the inventory scope
 
 ### Requirement: The system shall track inventory movements
 
@@ -40,7 +40,7 @@ El sistema debe permitir venta de liquidos con factura/recibo basico interno.
 #### Scenario: A liquid product is sold
 
 - Given a liquid product has stock and sale price
-- When the receptionist records the sale
+- When the cashier records the sale
 - Then the system shall reduce stock, register income and generate a basic internal invoice or receipt
 
 ### Requirement: The system shall show pending student debts
@@ -52,6 +52,16 @@ Los creditos de alumnos deben consultarse por alumno y por estado.
 - Given a student has a pending inventory debt
 - When the receptionist records payment
 - Then the debt shall be marked paid and linked to the payment record
+
+### Requirement: The system shall restrict inventory adjustments by role
+
+Los cajeros pueden vender liquidos y registrar salidas por venta, pero no pueden hacer ajustes manuales de stock.
+
+#### Scenario: A cashier attempts to adjust stock manually
+
+- Given a liquid product exists
+- When a user with role `cashier` attempts to adjust stock outside a sale
+- Then the system shall reject the action or require `admin` or `superadmin` authorization
 
 ## Open Questions
 

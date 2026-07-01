@@ -33,3 +33,9 @@
 - Se marco WhatsApp como canal obligatorio de notificaciones del MVP.
 - Se separo costo de desarrollo de costos variables de Meta/proveedor/mensajes.
 - Se agrego justificacion del precio recomendado de 600 USD por modulos.
+
+## [2026-07-01] update | Spec inicial core Supabase
+
+- Se creo `openspec/specs/core-supabase-foundation/spec.md` como contrato inicial para proceder con implementacion.
+- Se documento backend/API primero con NestJS, Supabase local, Supabase CLI, RBAC, tipado fuerte y modulos feature-first.
+- Se dejaron defaults de arranque: C$ como moneda base de reportes, recibos internos no fiscales y asistencia administrativa sin reservas.

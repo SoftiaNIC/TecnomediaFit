@@ -19,3 +19,23 @@ The platform shall separate requirements for payments, schedules, employees, inv
 - Given a new business requirement is discovered
 - When it is documented
 - Then it shall be placed in the closest capability spec or a new capability spec if needed
+
+### Requirement: Platform must define technical direction
+
+The platform shall summarize NestJS as backend/API, Supabase as data/auth, Supabase CLI for migrations/types/local integration validation, generated `database.types.ts`, strong typing and feature-first module boundaries.
+
+#### Scenario: Implementation is prepared
+
+- Given code has not started
+- When the implementation plan is created
+- Then it shall follow NestJS, Supabase, Supabase CLI, generated `database.types.ts`, local integration validation, strong typing and feature-first organization
+
+### Requirement: Platform must include initial RBAC
+
+The MVP shall include 2 `cashier`, 1 `admin` and 1 `superadmin` accounts.
+
+#### Scenario: Cashier attempts a critical action
+
+- Given a user has role `cashier`
+- When the user attempts to delete history, change roles, adjust stock manually or modify global configuration
+- Then the system shall require `admin` or `superadmin` authorization

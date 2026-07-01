@@ -1,7 +1,7 @@
 ---
 spec_id: expenses-cash
 status: draft
-version: 0.1
+version: 0.2
 source: raw/sources/2026-06-24-fit-studio-brief.md
 ---
 
@@ -42,6 +42,16 @@ Movimientos de caja chica y cuenta principal deben registrarse por separado.
 - Given the expense is paid using petty cash
 - When the payment is recorded
 - Then the system shall reduce petty cash balance and link the expense to that fund
+
+### Requirement: The system shall restrict sensitive financial actions by role
+
+Los cajeros pueden registrar movimientos permitidos, pero no pueden gestionar configuracion global de caja ni ver metricas financieras sensibles completas.
+
+#### Scenario: A cashier attempts to change fund configuration
+
+- Given petty cash and main account are configured
+- When a user with role `cashier` attempts to change fund settings
+- Then the system shall reject the action or require `admin` or `superadmin` authorization
 
 ## Open Questions
 

@@ -14,8 +14,18 @@ The system shall include instructors in employee management.
 
 The system shall record employee entry and exit times.
 
-#### Scenario: Receptionist checks in
+#### Scenario: Cashier checks in
 
-- Given the receptionist is assigned to a shift
+- Given the cashier is assigned to a shift
 - When check-in is recorded
 - Then the system shall store employee, shift and timestamp
+
+### Requirement: Instructors must not require login in MVP
+
+The MVP shall manage instructors as employee records without requiring user accounts.
+
+#### Scenario: Instructor is registered
+
+- Given an instructor needs to be assigned to classes
+- When the instructor is created
+- Then the system shall store the instructor as an employee record without login credentials

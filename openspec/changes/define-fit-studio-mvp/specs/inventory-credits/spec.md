@@ -24,8 +24,18 @@ The system shall record pending student debts related to liquid inventory.
 
 The system shall record liquid sales and generate a basic internal invoice or receipt.
 
-#### Scenario: Receptionist sells a liquid product
+#### Scenario: Cashier sells a liquid product
 
 - Given a liquid product has stock and sale price
 - When the sale is recorded
 - Then stock shall decrease, income shall be registered, and a basic invoice or receipt shall be generated
+
+### Requirement: Cashiers must not manually adjust stock
+
+Cashiers shall sell liquids and register sale-driven exits but shall not manually adjust stock.
+
+#### Scenario: Cashier attempts manual stock adjustment
+
+- Given a liquid product exists
+- When a `cashier` attempts to adjust stock outside a sale
+- Then the system shall require `admin` or `superadmin` authorization

@@ -11,7 +11,7 @@ Estas tareas resumen el estado de preparacion del alcance. Las tareas operativas
 
 - [ ] Confirmar moneda, tasa de cambio y reglas de conversion.
 - [ ] Confirmar formato y numeracion de factura/recibo basico.
-- [ ] Confirmar canal de notificaciones.
+- [ ] Confirmar proveedor de WhatsApp y modo de envio.
 - [ ] Confirmar si las clases requieren cupos, reservas o solo asistencia.
 - [ ] Confirmar si el cierre comercial sera 500 USD o 600 USD.
 
@@ -25,10 +25,13 @@ Estas tareas resumen el estado de preparacion del alcance. Las tareas operativas
 - [x] Definir spec de gastos y caja.
 - [x] Definir spec de notificaciones y analitica.
 - [x] Ajustar alcance para facturacion basica de membresias y venta de liquidos.
+- [x] Definir direccion tecnica resumida: NestJS, Supabase, Supabase CLI, tipado fuerte y feature-first.
+- [x] Definir Supabase CLI como flujo de validacion local de integraciones.
+- [x] Definir RBAC funcional: 2 `cashier`, 1 `admin`, 1 `superadmin`.
 
 ## Documents
 
 - [x] Crear cotizacion preliminar.
 - [x] Crear paper de arquitectura preliminar.
-- [ ] Ajustar cotizacion cuando exista tarifa o presupuesto objetivo.
-- [ ] Ajustar arquitectura cuando se defina stack tecnico.
+- [ ] Cerrar cotizacion final entre 500 USD y 600 USD.
+- [x] Ajustar arquitectura cuando se defina stack tecnico.

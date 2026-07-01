@@ -30,6 +30,26 @@ The MVP shall include WhatsApp as the required notification channel for payment 
 - When reminders are generated
 - Then the system shall prepare or send a WhatsApp notification for that student
 
+### Requirement: Notification and dashboard permissions must follow RBAC
+
+Cashiers shall prepare/send operational reminders and see limited metrics; admin and superadmin shall configure messages and see complete metrics.
+
+#### Scenario: Cashier opens dashboard
+
+- Given a user has role `cashier`
+- When the user opens the dashboard
+- Then the system shall show operational metrics and hide complete sensitive financial metrics
+
+### Requirement: WhatsApp integration flow must be validated locally
+
+The internal WhatsApp reminder flow shall be validated with Supabase CLI before connecting the real provider.
+
+#### Scenario: Reminder flow is tested locally
+
+- Given local data, Auth/RBAC and generated `database.types.ts` are available through Supabase CLI
+- When reminder generation is tested
+- Then recipients, payloads and role permissions shall be validated without production data
+
 ### Requirement: Conversational assistants must be excluded from MVP
 
 The MVP estimate shall exclude conversational assistants.

@@ -19,3 +19,13 @@ The system shall default Ballet and Urbano to 1.5 hours and other known classes 
 - Given the class type is Urbano
 - When a session is created
 - Then the duration shall default to 1.5 hours
+
+### Requirement: Cashiers must record attendance without managing schedules
+
+Cashiers shall capture attendance but shall not configure schedules/classes.
+
+#### Scenario: Cashier records attendance
+
+- Given a class session exists
+- When a `cashier` records attendance
+- Then the system shall allow attendance capture and prevent schedule configuration changes
