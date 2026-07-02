@@ -18,6 +18,7 @@ Fit Studio opera como un estudio deportivo/gimnasio con clases grupales, membres
 ## Capabilities
 
 - `core-supabase-foundation`: base tecnica inicial para NestJS, Supabase, Supabase CLI, RBAC, tipado fuerte y desarrollo feature-first.
+- `agent-harnessing-workflow`: orquestacion de agentes, modelos por rol, review, test y QA para desarrollo paralelo.
 - `memberships-payments`: membresias, pagos, facturacion basica interna y divisas.
 - `schedules-classes`: horarios, clases, sesiones y duraciones.
 - `employees-attendance`: cajeros operativos, instructores registrados y control de entrada/salida.
@@ -77,6 +78,18 @@ La implementacion futura debe resumirse como NestJS para backend/API, Supabase p
 - When implementation tasks are defined
 - Then the tasks shall follow NestJS, Supabase, Supabase CLI for migrations, generated `database.types.ts`, local integration validation, strong typing and feature-first module boundaries
 - And the first implementation shall use `core-supabase-foundation` as the initial spec
+
+### Requirement: The platform shall use agent harnessing for parallel implementation
+
+La implementacion debe coordinar agentes por ownership claro, modelos adecuados por rol, gates de Reviewer/Test y QA antes de integrar cambios.
+
+#### Scenario: Parallel implementation is planned
+
+- Given implementation work is split across multiple modules
+- When agents are assigned
+- Then the work shall follow `agent-harnessing-workflow`
+- And each agent shall have a role, model, reasoning level and ownership boundary
+- And Reviewer/Test and QA shall validate risky changes before closeout
 
 ## Out Of Scope
 

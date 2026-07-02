@@ -24,6 +24,7 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 ## Product Modules
 
 - Core tecnico inicial con NestJS, Supabase, Supabase CLI, RBAC y tipado fuerte.
+- Agent harnessing para orquestacion, review, test y QA de implementacion paralela.
 - Membresias y pagos.
 - Horarios y clases.
 - Empleados, instructores y asistencia laboral.
@@ -70,6 +71,7 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 
 - La spec inicial para proceder con codigo productivo es `openspec/specs/core-supabase-foundation/spec.md`.
 - Esta spec define backend/API primero, Supabase local, migraciones, generacion de tipos, RBAC, feature-first y defaults de arranque.
+- El flujo de agentes para implementar en paralelo se define en `openspec/specs/agent-harnessing-workflow/spec.md` y `docs/agent-harnessing.md`.
 - Cualquier implementacion inicial debe validarse contra esa spec antes de crear frontend o conectar proveedores externos.
 
 ## Open Questions

@@ -16,6 +16,7 @@ La recomendacion inicial es un monolito modular orientado a dominio con resumen 
 ## Logical Modules
 
 - `core-supabase-foundation`: base tecnica inicial para backend/API, Supabase local, migraciones, tipos, RBAC y limites de implementacion.
+- `agent-harnessing-workflow`: orquestacion de agentes, modelos por rol, review, test y QA para desarrollo paralelo controlado.
 - `memberships-payments`: planes, pagos, facturacion basica interna, divisas y deuda financiera.
 - `schedules-classes`: clases, sesiones, duraciones, horarios y disponibilidad.
 - `employees-attendance`: cajeros operativos, instructores registrados, turnos y entrada/salida.

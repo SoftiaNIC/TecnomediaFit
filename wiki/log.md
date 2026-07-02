@@ -39,3 +39,9 @@
 - Se creo `openspec/specs/core-supabase-foundation/spec.md` como contrato inicial para proceder con implementacion.
 - Se documento backend/API primero con NestJS, Supabase local, Supabase CLI, RBAC, tipado fuerte y modulos feature-first.
 - Se dejaron defaults de arranque: C$ como moneda base de reportes, recibos internos no fiscales y asistencia administrativa sin reservas.
+
+## [2026-07-01] update | Agent harnessing del proyecto
+
+- Se creo `docs/agent-harnessing.md` con workflow de orquestador, Supabase/Data Architect, Feature Workers, Reviewer/Test, QA y Documentation.
+- Se asignaron modelos por rol para usar modelos altos en arquitectura, datos y review, y modelos ligeros en QA checklist, documentacion y parches acotados.
+- Se agrego `openspec/specs/agent-harnessing-workflow/spec.md` como spec verificable del flujo de agentes.

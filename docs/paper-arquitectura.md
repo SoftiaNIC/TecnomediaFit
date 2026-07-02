@@ -74,6 +74,7 @@ Para desarrollar rapido, el proyecto debe prepararse para que varios agentes tra
 - Los agentes no deben tocar archivos globales salvo que el contrato lo requiera.
 - Las interfaces entre modulos deben ser explicitas para evitar dependencias circulares.
 - Las pruebas o validaciones de cada modulo deben poder correr de forma aislada.
+- El flujo operativo detallado vive en `docs/agent-harnessing.md` y define orquestador, agentes por rol, modelos, Reviewer/Test y QA.
 
 ## Modulos funcionales
 
