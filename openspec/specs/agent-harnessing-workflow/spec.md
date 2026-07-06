@@ -13,7 +13,7 @@ Definir el flujo de orquestacion de agentes para implementar Fit Studio con desa
 
 ## Context
 
-Fit Studio usara NestJS, Supabase, Supabase CLI, tipado fuerte y arquitectura feature-first. Para acelerar el desarrollo sin romper contratos compartidos, el proyecto necesita un harness donde cada agente tenga ownership, modelo asignado y gates de calidad.
+Fit Studio usara Turbo, SvelteKit, NestJS, Supabase, Supabase CLI, tipado fuerte y arquitectura feature-first. Para acelerar el desarrollo sin romper contratos compartidos, el proyecto necesita un harness donde cada agente tenga ownership, modelo asignado y gates de calidad.
 
 ## Requirements
 
@@ -39,6 +39,17 @@ El harness debe asignar modelos altos a tareas de arquitectura, datos, review y 
 - When the orchestrator selects an agent role
 - Then the selected role shall include a model and reasoning level from `docs/agent-harnessing.md`
 - And high-risk roles such as orchestrator, Supabase/data architect and reviewer shall use high-capability models
+
+### Requirement: Web and API work shall stay separated by app ownership
+
+El harness debe separar ownership de `apps/web`, `apps/api`, `packages/shared`, `packages/database` y `supabase`.
+
+#### Scenario: A full-stack change is implemented
+
+- Given a change touches SvelteKit, NestJS and Supabase
+- When agents are assigned
+- Then shared contracts shall be updated by the orchestrator before app work starts
+- And web workers shall not change API or database contracts without escalation
 
 ### Requirement: Supabase work shall use Supabase CLI workflow
 

@@ -10,7 +10,7 @@ Fit Studio es un estudio deportivo con clases de Spinning, Zumba, Acondicionamie
 
 ## Recomendacion arquitectonica
 
-Se recomienda iniciar con un monolito modular usando **NestJS + Supabase**, organizado con paradigma **feature-first** separado por modulo. Este enfoque permite desarrollar rapido, mantener tipado fuerte y habilitar agent harnessing paralelo sin que varios agentes choquen sobre los mismos archivos.
+Se recomienda iniciar con un monorepo modular usando **Turbo + SvelteKit + NestJS + Supabase**, organizado con paradigma **feature-first** separado por modulo. Este enfoque permite desarrollar rapido, mantener tipado fuerte y habilitar agent harnessing paralelo sin que varios agentes choquen sobre los mismos archivos.
 
 Esta decision permite:
 
@@ -20,10 +20,11 @@ Esta decision permite:
 - Reducir conflictos entre agentes o desarrolladores trabajando en paralelo.
 - Priorizar trazabilidad financiera, membresias, horarios y metricas antes de automatizaciones avanzadas.
 
-## Arquitectura NestJS + Supabase
+## Arquitectura Turbo + SvelteKit + NestJS + Supabase
 
-NestJS sera el backend/API principal del sistema. Supabase sera la plataforma de datos, autenticacion y soporte operativo.
+Turbo sera el monorepo del sistema. SvelteKit sera el frontend del MVP, NestJS sera el backend/API principal y Supabase sera la plataforma de datos, autenticacion y soporte operativo.
 
+- SvelteKit organiza el shell web, login local inicial, dashboard operativo y futuras pantallas de gestion.
 - NestJS organiza casos de uso, validaciones, permisos, servicios por modulo e integracion WhatsApp.
 - Supabase Postgres conserva los datos del negocio: alumnos, membresias, pagos, facturas basicas, liquidos, gastos, horarios y notificaciones.
 - Supabase Auth maneja autenticacion y roles base del MVP: `superadmin`, `admin` y `cashier`.
@@ -33,7 +34,7 @@ NestJS sera el backend/API principal del sistema. Supabase sera la plataforma de
 
 ## Supabase CLI
 
-El codigo aun no se inicia, pero cuando se autorice implementacion el flujo tecnico debe usar Supabase CLI:
+La implementacion inicial fue autorizada el 2026-07-02. El flujo tecnico debe usar Supabase CLI:
 
 - Inicializar Supabase con `supabase init`.
 - Ejecutar ambiente local con `supabase start`.
@@ -222,7 +223,7 @@ En NestJS + Supabase, esta trazabilidad debe resolverse con tablas historicas, m
 ## Roadmap sugerido
 
 1. Cerrar preguntas criticas y aprobar MVP.
-2. Inicializar NestJS y Supabase CLI cuando se autorice codigo.
+2. Inicializar Turbo, SvelteKit, NestJS y Supabase CLI.
 3. Crear migraciones base y generar tipos TypeScript desde Supabase.
 4. Construir operacion base por features: alumnos, pagos, facturacion basica, horarios, clases y empleados.
 5. Agregar venta de liquidos, inventario, creditos, gastos y caja.

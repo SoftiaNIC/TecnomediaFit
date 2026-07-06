@@ -1,0 +1,13 @@
+node_modules/
+.turbo/
+.svelte-kit/
+dist/
+build/
+coverage/
+.env
+.env.*
+!.env.example
+
+# Supabase local runtime
+supabase/.branches/
+supabase/.temp/

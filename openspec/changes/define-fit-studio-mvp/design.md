@@ -2,10 +2,12 @@
 
 ## Architecture Direction
 
-La recomendacion inicial es un monolito modular orientado a dominio con resumen tecnico NestJS + Supabase. El volumen del negocio no justifica microservicios ni una arquitectura distribuida compleja.
+La recomendacion inicial es un monorepo modular orientado a dominio con resumen tecnico Turbo + SvelteKit + NestJS + Supabase. El volumen del negocio no justifica microservicios ni una arquitectura distribuida compleja.
 
 ## Technical Summary
 
+- Turbo como monorepo.
+- SvelteKit como frontend del MVP.
 - NestJS como backend/API principal.
 - Supabase como datos y autenticacion.
 - Supabase CLI para migraciones, generacion de tipos y validacion local de integraciones cuando inicie implementacion.
@@ -15,7 +17,7 @@ La recomendacion inicial es un monolito modular orientado a dominio con resumen 
 
 ## Logical Modules
 
-- `core-supabase-foundation`: base tecnica inicial para backend/API, Supabase local, migraciones, tipos, RBAC y limites de implementacion.
+- `core-supabase-foundation`: base tecnica inicial para monorepo Turbo, SvelteKit shell, backend/API, Supabase local, migraciones, tipos, RBAC y limites de implementacion.
 - `agent-harnessing-workflow`: orquestacion de agentes, modelos por rol, review, test y QA para desarrollo paralelo controlado.
 - `memberships-payments`: planes, pagos, facturacion basica interna, divisas y deuda financiera.
 - `schedules-classes`: clases, sesiones, duraciones, horarios y disponibilidad.

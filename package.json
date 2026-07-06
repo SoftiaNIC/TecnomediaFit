@@ -1,0 +1,22 @@
+{
+  "name": "tecnomedia-fit",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@11.3.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:types": "supabase gen types typescript --local > packages/database/src/database.types.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.10",
+    "supabase": "^2.31.8",
+    "turbo": "^2.5.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

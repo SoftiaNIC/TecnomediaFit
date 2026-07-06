@@ -1,6 +1,6 @@
 # TecnomediaFit
 
-Base documental para definir Fit Studio antes de escribir codigo.
+Monorepo para Fit Studio: base documental, especificacion OpenSpec y primera implementacion con Turbo, SvelteKit, NestJS y Supabase local.
 
 ## Estructura
 
@@ -8,15 +8,21 @@ Base documental para definir Fit Studio antes de escribir codigo.
 - `wiki/`: LLM-Wiki con sintesis, enlaces e historial.
 - `openspec/`: especificacion spec-driven del producto por capacidades y cambios.
 - `docs/`: cotizacion y paper de arquitectura.
+- `apps/api/`: backend/API NestJS.
+- `apps/web/`: shell frontend SvelteKit.
+- `packages/shared/`: contratos compartidos de dominio.
+- `packages/database/`: tipos y helpers Supabase.
+- `supabase/`: config local, migraciones y seeds.
 
 ## Estado
 
-Inicializacion documental lista para discovery. Aun no existe codigo del producto.
+Implementacion inicial autorizada el 2026-07-02. El primer lote contiene scaffold funcional de monorepo, API, web shell, Supabase local y contratos RBAC.
 
 ## Punto de entrada
 
 1. Leer `AGENTS.md`.
 2. Revisar `wiki/index.md`.
 3. Revisar `openspec/project.md`.
-4. Trabajar el cambio activo `openspec/changes/define-fit-studio-mvp/`.
-5. Usar `docs/cotizacion.md` y `docs/paper-arquitectura.md` como entregables preliminares.
+4. Instalar dependencias con `pnpm install`.
+5. Usar `pnpm build`, `pnpm lint` y `pnpm test` para validar el monorepo.
+6. Usar `pnpm supabase:start` y `pnpm supabase:types` cuando Docker/Supabase local esten disponibles.

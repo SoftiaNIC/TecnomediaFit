@@ -2,7 +2,7 @@
 
 ## Proposito
 
-Definir el flujo de trabajo con agentes para implementar Fit Studio rapido, con bajo conflicto entre archivos y con control de calidad antes de integrar cambios. El harness se apoya en OpenSpec, NestJS, Supabase, Supabase CLI, tipado fuerte y arquitectura feature-first.
+Definir el flujo de trabajo con agentes para implementar Fit Studio rapido, con bajo conflicto entre archivos y con control de calidad antes de integrar cambios. El harness se apoya en OpenSpec, Turbo, SvelteKit, NestJS, Supabase, Supabase CLI, tipado fuerte y arquitectura feature-first.
 
 ## Principios
 
@@ -21,6 +21,7 @@ Definir el flujo de trabajo con agentes para implementar Fit Studio rapido, con 
 | Orquestador / Lead Architect | `gpt-5.5` | `xhigh` | Divide trabajo, protege contratos, resuelve conflictos, integra resultados y decide prioridades. |
 | Supabase / Data Architect | `gpt-5.5` | `high` | Disena schema, migraciones, Auth/RBAC, RLS/politicas, seeds, tipos y validacion con Supabase CLI. |
 | Backend Core / Nest Architect | `gpt-5.4` | `high` | Crea estructura NestJS, modulos base, guards, DTOs, servicios compartidos y wiring principal. |
+| Web Core / SvelteKit Architect | `gpt-5.4` | `medium` | Crea shell SvelteKit, rutas base, consumo API, estados de auth y componentes UI iniciales. |
 | Feature Worker | `gpt-5.4` | `medium` | Implementa una feature de negocio con ownership completo y pruebas locales. |
 | Fast Patch Worker | `gpt-5.3-codex-spark` | `medium` | Cambios pequenos, mecanicos o muy acotados dentro de un modulo. |
 | Reviewer / Test Engineer | `gpt-5.5` | `high` | Revisa riesgos, bugs, permisos, trazabilidad financiera, pruebas faltantes y regresiones. |
@@ -33,7 +34,7 @@ Definir el flujo de trabajo con agentes para implementar Fit Studio rapido, con 
 
 El agente Supabase debe usar el skill o flujo equivalente de Supabase CLI para:
 
-- `supabase init` cuando se autorice codigo.
+- `supabase init` o configuracion equivalente versionada cuando se autorice codigo.
 - `supabase start` para ambiente local.
 - Migraciones versionadas en `supabase/migrations`.
 - Seeds locales para roles y datos minimos.
@@ -81,6 +82,7 @@ Los agentes se separan por ownership:
 
 - Supabase/Data: migraciones, seeds, RLS/politicas, tipos.
 - Backend Core: NestJS base, auth, guards, cliente Supabase tipado.
+- Web Core: SvelteKit shell, rutas base, consumo API y UI inicial.
 - Feature Worker: modulo especifico.
 - Documentation: specs/wiki si cambia conocimiento.
 
@@ -137,6 +139,7 @@ El orquestador entrega:
 | Modulo | Ownership Principal | Apoyo |
 | --- | --- | --- |
 | `auth-rbac` | Backend Core / Supabase | Reviewer |
+| `web-shell` | Web Core / Orquestador | QA |
 | `memberships-payments` | Feature Worker | Supabase, Reviewer |
 | `inventory-credits` | Feature Worker | Supabase, QA |
 | `expenses-cash` | Feature Worker | Reviewer |

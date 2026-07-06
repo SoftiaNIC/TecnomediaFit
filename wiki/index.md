@@ -21,7 +21,7 @@
 
 - [Project constitution](../openspec/project.md) - Reglas globales del proyecto.
 - [Platform spec](../openspec/specs/fit-studio-platform/spec.md) - Alcance base del sistema.
-- [Core Supabase foundation spec](../openspec/specs/core-supabase-foundation/spec.md) - Spec inicial para arrancar backend/API con NestJS, Supabase CLI, RBAC y tipado fuerte.
+- [Core Supabase foundation spec](../openspec/specs/core-supabase-foundation/spec.md) - Spec inicial para arrancar monorepo Turbo con SvelteKit, NestJS, Supabase CLI, RBAC y tipado fuerte.
 - [Agent harnessing workflow spec](../openspec/specs/agent-harnessing-workflow/spec.md) - Orquestacion de agentes, modelos por rol, Reviewer/Test y QA.
 - [MVP definition change](../openspec/changes/define-fit-studio-mvp/proposal.md) - Cambio activo para cerrar MVP, cotizacion y arquitectura.
 

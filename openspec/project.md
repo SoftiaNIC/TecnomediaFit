@@ -2,12 +2,12 @@
 
 ## Purpose
 
-Fit Studio necesita una plataforma administrativa para operar un estudio deportivo pequeno antes de crecer a flujos mas complejos. Este repositorio documenta el alcance, la cotizacion y la arquitectura antes de escribir codigo.
+Fit Studio necesita una plataforma administrativa para operar un estudio deportivo pequeno antes de crecer a flujos mas complejos. Este repositorio documenta el alcance, la cotizacion, la arquitectura y la implementacion inicial autorizada.
 
 ## Current Phase
 
-- Fase: discovery, cotizacion y arquitectura.
-- Estado de codigo: no iniciado.
+- Fase: implementacion inicial del core.
+- Estado de codigo: iniciado el 2026-07-02.
 - Fuente de verdad funcional: `openspec/specs/` y cambios activos en `openspec/changes/`.
 - Fuente de verdad de conocimiento: `raw/` como material inmutable y `wiki/` como sintesis mantenida por el agente.
 
@@ -23,7 +23,7 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 
 ## Product Modules
 
-- Core tecnico inicial con NestJS, Supabase, Supabase CLI, RBAC y tipado fuerte.
+- Core tecnico inicial con Turbo, SvelteKit, NestJS, Supabase, Supabase CLI, RBAC y tipado fuerte.
 - Agent harnessing para orquestacion, review, test y QA de implementacion paralela.
 - Membresias y pagos.
 - Horarios y clases.
@@ -34,6 +34,8 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 
 ## Technical Direction
 
+- Turbo sera el monorepo del MVP.
+- SvelteKit sera el frontend del MVP.
 - NestJS sera el backend/API principal del MVP.
 - Supabase sera la plataforma de datos y autenticacion.
 - Supabase CLI sera el flujo para migraciones, generacion de tipos y validacion local de integraciones cuando inicie implementacion.
@@ -51,7 +53,7 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 
 ## Non-Negotiables
 
-- No iniciar codigo productivo antes de cerrar el alcance minimo viable.
+- No ampliar codigo productivo fuera del core autorizado sin revisar OpenSpec.
 - Mantener la solucion proporcional al tamano del negocio.
 - Separar claramente caja chica, cuenta principal, ingresos, gastos y deudas.
 - Dejar asistentes conversacionales fuera del MVP cotizado.
@@ -70,9 +72,9 @@ Fit Studio necesita una plataforma administrativa para operar un estudio deporti
 ## Initial Implementation Spec
 
 - La spec inicial para proceder con codigo productivo es `openspec/specs/core-supabase-foundation/spec.md`.
-- Esta spec define backend/API primero, Supabase local, migraciones, generacion de tipos, RBAC, feature-first y defaults de arranque.
+- Esta spec define monorepo Turbo, SvelteKit shell, backend/API NestJS, Supabase local, migraciones, generacion de tipos, RBAC, feature-first y defaults de arranque.
 - El flujo de agentes para implementar en paralelo se define en `openspec/specs/agent-harnessing-workflow/spec.md` y `docs/agent-harnessing.md`.
-- Cualquier implementacion inicial debe validarse contra esa spec antes de crear frontend o conectar proveedores externos.
+- Cualquier implementacion inicial debe validarse contra esa spec antes de conectar proveedores externos o construir pantallas fuera del MVP autorizado.
 
 ## Open Questions
 

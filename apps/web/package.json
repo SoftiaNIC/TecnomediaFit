@@ -1,0 +1,25 @@
+{
+  "name": "@fitstudio/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite dev --host 0.0.0.0",
+    "lint": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "test": "svelte-kit sync && vitest run --passWithNoTests"
+  },
+  "dependencies": {
+    "@fitstudio/shared": "workspace:*",
+    "@sveltejs/adapter-auto": "^6.0.1",
+    "@sveltejs/kit": "^2.22.2",
+    "@sveltejs/vite-plugin-svelte": "^5.1.0",
+    "svelte": "^5.34.9",
+    "vite": "^6.3.5"
+  },
+  "devDependencies": {
+    "svelte-check": "^4.2.2",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}

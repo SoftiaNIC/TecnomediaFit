@@ -45,3 +45,10 @@
 - Se creo `docs/agent-harnessing.md` con workflow de orquestador, Supabase/Data Architect, Feature Workers, Reviewer/Test, QA y Documentation.
 - Se asignaron modelos por rol para usar modelos altos en arquitectura, datos y review, y modelos ligeros en QA checklist, documentacion y parches acotados.
 - Se agrego `openspec/specs/agent-harnessing-workflow/spec.md` como spec verificable del flujo de agentes.
+
+## [2026-07-02] update | Inicio de implementacion Turbo SvelteKit Nest Supabase
+
+- El usuario autorizo iniciar codigo productivo.
+- Se ajusto el stack inicial a monorepo Turbo con `apps/web` en SvelteKit, `apps/api` en NestJS y Supabase local.
+- Se mantiene Supabase CLI como flujo obligatorio para migraciones, seeds, tipos y validacion local.
+- El frontend inicial queda como shell de login/dashboard; las pantallas CRUD completas siguen sujetas a specs de modulo.

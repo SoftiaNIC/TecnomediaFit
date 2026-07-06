@@ -9,7 +9,7 @@ source: docs/paper-arquitectura.md
 
 ## Objective
 
-Definir la primera spec de implementacion para arrancar el core backend de Fit Studio con NestJS, Supabase local, Supabase CLI, RBAC, tipado fuerte y modulos feature-first antes de construir UI o conectar proveedores externos.
+Definir la primera spec de implementacion para arrancar el core de Fit Studio con Turbo, SvelteKit, NestJS, Supabase local, Supabase CLI, RBAC, tipado fuerte y modulos feature-first antes de conectar proveedores externos.
 
 ## Context
 
@@ -17,7 +17,8 @@ Fit Studio ya tiene alcance MVP documentado para membresias, pagos, facturacion 
 
 ## Implementation Baseline
 
-- Backend/API primero; no frontend en esta primera etapa.
+- Monorepo Turbo como contenedor de apps y paquetes compartidos.
+- SvelteKit como frontend shell inicial para login local y dashboard operativo.
 - NestJS como backend principal.
 - Supabase como plataforma de datos y autenticacion.
 - Supabase CLI como flujo obligatorio para ambiente local, migraciones, tipos y validacion de integraciones.
@@ -27,16 +28,16 @@ Fit Studio ya tiene alcance MVP documentado para membresias, pagos, facturacion 
 
 ## Requirements
 
-### Requirement: The initial implementation shall start with backend/API core only
+### Requirement: The initial implementation shall start with monorepo core
 
-La primera implementacion debe crear la base backend/API con NestJS y Supabase local, sin iniciar frontend ni integraciones externas reales.
+La primera implementacion debe crear la base monorepo con SvelteKit, NestJS y Supabase local, sin integraciones externas reales.
 
 #### Scenario: Product implementation is authorized
 
 - Given the user authorizes product code initialization
 - When the first implementation task starts
-- Then the repository shall initialize the backend/API core
-- And it shall not create frontend application code unless explicitly approved
+- Then the repository shall initialize the Turbo monorepo, NestJS API core and SvelteKit web shell
+- And the frontend shall remain a shell until feature screens are explicitly implemented
 - And it shall not require a real WhatsApp provider to validate the local core
 
 ### Requirement: The core shall use Supabase CLI as the local integration workflow
@@ -128,6 +129,7 @@ La implementacion inicial debe usar defaults documentados para avanzar sin bloqu
 ## Out Of Scope
 
 - Frontend/UI.
+- Full frontend feature CRUD beyond the authorized SvelteKit shell.
 - Chatbot or conversational assistant.
 - Real WhatsApp provider integration before provider selection.
 - Fiscal invoicing or tax authority integration.

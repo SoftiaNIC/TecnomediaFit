@@ -16,7 +16,7 @@
 - [x] Sincronizar direccion tecnica resumida en OpenSpec.
 - [x] Sincronizar RBAC funcional en OpenSpec.
 - [x] Sincronizar Supabase CLI como flujo de validacion local de integraciones.
-- [ ] Marcar el cambio como aprobado cuando el usuario confirme el alcance.
+- [x] Marcar el cambio como aprobado cuando el usuario confirme el alcance.
 
 ## 3. Commercial Documents
 
@@ -33,4 +33,4 @@
 - [x] Definir estrategia de autenticacion y roles.
 - [x] Definir Supabase CLI como parte del flujo de integracion.
 - [ ] Definir proveedor WhatsApp y costos operativos.
-- [ ] Autorizar inicio de codigo productivo.
+- [x] Autorizar inicio de codigo productivo.
